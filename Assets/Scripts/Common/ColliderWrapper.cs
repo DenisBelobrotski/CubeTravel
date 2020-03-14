@@ -7,7 +7,7 @@ public class ColliderWrapper : MonoBehaviour
     public event Action<Collision> OnCollisionExitEvent;
     public event Action<Collider> OnTriggerEnterEvent;
     public event Action<Collider> OnTriggerExitEvent;
-    
+
 
     void OnCollisionEnter(Collision other)
     {

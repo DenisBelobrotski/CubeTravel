@@ -8,7 +8,7 @@ public class LevelsManager : MonoBehaviour
     public static event Action<LevelsManager> OnLevelRestarted;
     public static event Action OnLevelCompleted;
     public static event Action OnLevelFailed;
-    
+
     [SerializeField] string levelPrefabPath;
     [SerializeField] string levelConfigsRootPath;
     [SerializeField] List<string> levelConfigsFileNames;
@@ -22,7 +22,7 @@ public class LevelsManager : MonoBehaviour
         get => PlayerPrefsWrapper.CurrentLevelIndex;
         private set => PlayerPrefsWrapper.CurrentLevelIndex = value;
     }
-    
+
     public Level CurrentLevel => currentLevel;
 
 
@@ -56,13 +56,13 @@ public class LevelsManager : MonoBehaviour
         string levelConfigFileName = levelConfigsFileNames[CurrentLevelIndex % levelConfigsFileNames.Count];
         string levelConfigPath = $"{levelConfigsRootPath}/{levelConfigFileName}";
         LevelConfig levelConfig = Resources.Load<LevelConfig>(levelConfigPath);
-        
+
         currentLevel = Instantiate(levelPrefab, transform).GetComponent<Level>();
         currentLevel.Initialize(levelConfig);
         currentLevel.OnFinished += Level_OnFinished;
-        
+
         mainCamera.UpdateTargetPosition(currentLevel);
-        
+
         OnLevelCreated?.Invoke(this);
     }
 

@@ -9,12 +9,12 @@ public class GameScreen : GuiScreen
 
     const string LevelCounterFormat = "LEVEL {0}";
     const string PlatformProgressFormat = "{0}/{1}";
-    
+
     [SerializeField] Text levelCounterLabel;
     [SerializeField] Text platformProgressLabel;
     [SerializeField] Button restartButton;
     [SerializeField] Button skipButton;
-    
+
 
     int LevelCounter
     {

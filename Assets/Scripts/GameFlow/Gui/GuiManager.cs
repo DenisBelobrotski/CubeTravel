@@ -27,8 +27,8 @@ public class GuiManager : MonoBehaviour
         LevelsManager.OnLevelCompleted -= LevelsManager_OnLevelCompleted;
         LevelsManager.OnLevelFailed -= LevelsManager_OnLevelFailed;
     }
-    
-    
+
+
     T ShowScreen<T>(string screenPrefabFileName) where T : GuiScreen
     {
         if (currentScreen != null)
@@ -68,8 +68,8 @@ public class GuiManager : MonoBehaviour
     {
         ShowGameScreen(levelsManager.CurrentLevelIndex, levelsManager.CurrentLevel.PlatformsMaxCount);
     }
-    
-    
+
+
     void LevelsManager_OnLevelRestarted(LevelsManager levelsManager)
     {
         ShowGameScreen(levelsManager.CurrentLevelIndex, levelsManager.CurrentLevel.PlatformsMaxCount);
@@ -80,8 +80,8 @@ public class GuiManager : MonoBehaviour
     {
         ShowWinScreen();
     }
-    
-    
+
+
     void LevelsManager_OnLevelFailed()
     {
         ShowLooseScreen();

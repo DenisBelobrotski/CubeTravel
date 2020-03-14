@@ -6,11 +6,11 @@ using Random = UnityEngine.Random;
 public class Level : MonoBehaviour
 {
     const int ObstaclesGeneratorMaxRetryCount = 3;
-    
+
     public static event Action<Level> OnCurrentPlatformChanged;
-        
+
     public event Action<bool> OnFinished;
-    
+
     [SerializeField] string platformPrefabPath;
     [SerializeField] string mainCharacterPrefabPath;
     [SerializeField] int platformsCount;
@@ -20,25 +20,25 @@ public class Level : MonoBehaviour
 
     GameObject platformPrefab = null;
     GameObject mainCharacterPrefab = null;
-    
+
     readonly List<Platform> platforms = new List<Platform>();
     int currentPlatformIndex = 0;
     MainCharacter mainCharacter = null;
 
-    
+
     public int CurrentPlatformIndex
     {
         get => currentPlatformIndex;
-        
+
         private set
         {
             currentPlatformIndex = value;
             OnCurrentPlatformChanged?.Invoke(this);
         }
     }
-    
+
     public Platform CurrentPlatform => platforms[currentPlatformIndex];
-    
+
     public int PlatformsMaxCount => platformsCount;
 
     bool IsMainCharacterEnabled
@@ -50,7 +50,7 @@ public class Level : MonoBehaviour
             if (mainCharacter.IsEnabled != value)
             {
                 mainCharacter.IsEnabled = value;
-            
+
                 if (value)
                 {
                     mainCharacter.OnExitReached += MainCharacter_OnExitReached;
@@ -70,7 +70,7 @@ public class Level : MonoBehaviour
     {
         platformPrefab = Resources.Load<GameObject>(platformPrefabPath);
         mainCharacterPrefab = Resources.Load<GameObject>(mainCharacterPrefabPath);
-        
+
         Platform startPlatform = GeneratePlatform(levelConfig);
         platforms.Add(startPlatform);
         CurrentPlatformIndex = 0;
@@ -83,7 +83,7 @@ public class Level : MonoBehaviour
         {
             platforms.Add(GeneratePlatform(levelConfig));
             platforms[i].transform.position = platforms[i - 1].transform.position + Vector3.forward * distanceBetweenPlatforms;
-            
+
             var range = levelConfig.PlatformWeightsRange;
             AddObstacles(platforms[i], Random.Range(range.x, range.y + 1));
         }
@@ -125,7 +125,7 @@ public class Level : MonoBehaviour
         while (obstacleBehaviour.Weight > platformWeight && retryCount < ObstaclesGeneratorMaxRetryCount);
 
         int obstaclesCount = platformWeight / obstacleBehaviour.Weight;
-        
+
         for (int i = 0; i < obstaclesCount; i++)
         {
             platform.AddObject(Instantiate(randomObstaclePrefab).transform, true);
@@ -138,7 +138,7 @@ public class Level : MonoBehaviour
         int randomPrefabIndex = Random.Range(0, obstaclePrefabFileNames.Count);
         string obstaclePrefabFilePath = $"{obstaclesRootPath}/{obstaclePrefabFileNames[randomPrefabIndex]}";
         GameObject randomObstaclePrefab = Resources.Load<GameObject>(obstaclePrefabFilePath);
-        
+
         return randomObstaclePrefab;
     }
 

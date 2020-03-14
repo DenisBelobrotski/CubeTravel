@@ -5,7 +5,7 @@ public class RotatingObject : MonoBehaviour
     [SerializeField] Transform rotatableRoot;
     [SerializeField] float angularVelocity;
 
-    
+
     public bool IsRotationEnabled { get; set; }
 
 

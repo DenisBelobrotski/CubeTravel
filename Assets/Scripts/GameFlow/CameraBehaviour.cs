@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     const float MovementLerpFactor = 0.05f;
-    
+
     [SerializeField] float distanceToPlatform;
 
     Vector3 targetPosition;

@@ -5,16 +5,16 @@ public class MainCharacter : MonoBehaviour
 {
     public event Action OnExitReached;
     public event Action OnObstacleHit;
-    
+
     [SerializeField] RotatingObject rotatingObject;
     [SerializeField] ColliderWrapper mainCollider;
-    
+
     int platformExitLayer;
     int obstacleLayer;
 
 
     bool IsExitTriggering { get; set; }
-    
+
     public bool IsEnabled { get; set; }
 
 
@@ -70,8 +70,8 @@ public class MainCharacter : MonoBehaviour
             rotatingObject.ResetRotation();
         }
     }
-    
-    
+
+
     void ColliderWrapper_OnTriggerExit(Collider other)
     {
         if (other.gameObject.layer == platformExitLayer)
