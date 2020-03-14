@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff2cfb7688b409db99b2de3a675faf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1803866504842418734}
   levelPrefabPath: Prefabs/Level/Level
   levelConfigsRootPath: LevelConfigs
   levelConfigsFileNames:
@@ -53,7 +54,6 @@ MonoBehaviour:
   - LevelConfig_2
   - LevelConfig_3
   - LevelConfig_4
-  mainCamera: {fileID: 1803866504842418734}
 --- !u!1001 &3122733172058131309
 PrefabInstance:
   m_ObjectHideFlags: 0

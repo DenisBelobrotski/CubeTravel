@@ -9,10 +9,10 @@ public class LevelsManager : MonoBehaviour
     public static event Action OnLevelCompleted;
     public static event Action OnLevelFailed;
 
+    [SerializeField] CameraBehaviour mainCamera;
     [SerializeField] string levelPrefabPath;
     [SerializeField] string levelConfigsRootPath;
     [SerializeField] List<string> levelConfigsFileNames;
-    [SerializeField] CameraBehaviour mainCamera;
 
     Level currentLevel = null;
 
