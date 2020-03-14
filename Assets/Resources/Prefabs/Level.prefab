@@ -45,9 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformPrefabPath: Prefabs/LevelContent/Platform
   mainCharacterPrefabPath: Prefabs/LevelContent/MainCharacter
-  platformsCount: 3
+  platformsCount: 5
   distanceBetweenPlatforms: 5
   obstaclesRootPath: Prefabs/LevelContent/Obstacles
   obstaclePrefabFileNames:
   - EnemyCube
   - RotatingContour
+  - FanObstacle
