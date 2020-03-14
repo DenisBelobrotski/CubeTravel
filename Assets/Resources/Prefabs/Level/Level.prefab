@@ -43,11 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20cc1205d8d4937aabd96f223c4d157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformPrefabPath: Prefabs/LevelContent/Platform
-  mainCharacterPrefabPath: Prefabs/LevelContent/MainCharacter
+  platformPrefabPath: Prefabs/Level/LevelContent/Platform
+  mainCharacterPrefabPath: Prefabs/Level/LevelContent/MainCharacter
   platformsCount: 5
   distanceBetweenPlatforms: 5
-  obstaclesRootPath: Prefabs/LevelContent/Obstacles
+  obstaclesRootPath: Prefabs/Level/LevelContent/Obstacles
   obstaclePrefabFileNames:
   - EnemyCube
   - RotatingContour

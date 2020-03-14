@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff2cfb7688b409db99b2de3a675faf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefabPath: Prefabs/Level
+  levelPrefabPath: Prefabs/Level/Level
   levelConfigsRootPath: LevelConfigs
   levelConfigsFileNames:
   - LevelConfig_0
